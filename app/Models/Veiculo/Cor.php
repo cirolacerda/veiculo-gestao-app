@@ -10,6 +10,9 @@ class Cor extends Model
 {
     use HasFactory;
 
+    //para o laravel entender o nome da tabela (senao ele entenderia como cors)
+    protected $table = 'cores';
+
     protected $fillable = [
         'nome'
     ];
