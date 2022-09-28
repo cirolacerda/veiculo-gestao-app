@@ -8,7 +8,7 @@
     <br/>
     <input placeholder="Insira o número CNH" name="registro_habilitacao" id="registro_habilitacao" type="text">
     <br/>
-    <select name="categoria_cnh" id="categoria_cnh">
+    <select name="categoria_cnh_id" id="categoria_cnh_id">
         <option value="">Selecione a categoria  </option>
 
         @foreach ($categorias_cnh as $categoria_cnh)
@@ -22,7 +22,7 @@
     <br/>
     <input placeholder="Insira a data da primeira habilitação" name="primeira_habilitacao" id="primeira_habilitacao" type="date">
     <br/>
-    <select name="departamento" id="departamento">
+    <select name="departamento_id" id="departamento_id">
         <option value="">Selecione o departamento  </option>
 
         @foreach ($departamentos as $departamento)

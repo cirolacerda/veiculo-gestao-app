@@ -20,7 +20,7 @@ class MotoristaController extends Controller
     }
 
     public function cadastrar(Request $request) {
-
+        /*
         $motorista = new Motorista();
         $motorista->nome = $request->input('nome');
         $motorista->matricula = $request->input('matricula');
@@ -30,6 +30,9 @@ class MotoristaController extends Controller
         $motorista->primeira_habilitacao = $request->input('primeira_habilitacao');
         $motorista->departamento_id = $request->input('departamento');
         $motorista->save();
+        */
+
+        Motorista::create($request->all());
 
         echo('Motorista Salvo');
     }

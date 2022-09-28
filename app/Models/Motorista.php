@@ -13,10 +13,10 @@ class Motorista extends Model
         'nome',
         'matricula',
         'registro_habilitacao',
-        'categoria_cnh',
+        'categoria_cnh_id',
         'validade_cnh',
         'primeira_habilitacao',
-        'departamento'
+        'departamento_id'
     ];
 
 }
