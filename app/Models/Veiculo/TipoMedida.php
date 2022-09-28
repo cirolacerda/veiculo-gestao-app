@@ -9,6 +9,8 @@ class TipoMedida extends Model
 {
     use HasFactory;
 
+    protected $table = 'tipos_medidas';
+
     //ODÔMETRO  HORÍMETRO
     protected $fillable = [
         'nome'
