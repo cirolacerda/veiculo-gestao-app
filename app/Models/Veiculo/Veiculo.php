@@ -11,22 +11,23 @@ class Veiculo extends Model
 
     protected $fillable = [
         'placa',
-        'tipo',
-        'marca',
-        'modelo',
-        'cor',
+        'tipo_id',
+        'marca_id',
+        'modelo_id',
+        'cor_id',
+        'tipo_medida_id',
+        'combustivel_id',
+        'departamento_id',
+        'categoria_cnh_id',
         'chassi',
         'renavam',
-        'tipo_medida',
         'medida_atual',
-        'combustivel',
         'data_aquisicao',
-        'categoria_cnh',
         'ano_fabricacao',
         'ano_modelo',
         'capacidade_tanque',
-        'capacidade_passageiros',
-        'departamento'
+        'capacidade_passageiros'
+
     ];
 
 }

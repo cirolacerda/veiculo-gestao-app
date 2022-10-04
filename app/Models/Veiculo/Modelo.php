@@ -11,6 +11,6 @@ class Modelo extends Model
 
     protected $fillable = [
         'nome',
-        'marca'
+        'marca_id'
     ];
 }
