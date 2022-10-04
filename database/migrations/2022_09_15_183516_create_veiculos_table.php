@@ -29,8 +29,8 @@ return new class extends Migration
             $table->string('renavam', 20);
             $table->double('medida_atual');
             $table->date('data_aquisicao');
-            $table->date('ano_fabricacao');
-            $table->date('ano_modelo');
+            $table->year('ano_fabricacao');
+            $table->year('ano_modelo');
             $table->integer('capacidade_tanque');
             $table->integer('capacidade_passageiros');
             $table->timestamps();
