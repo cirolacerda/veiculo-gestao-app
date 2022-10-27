@@ -5,7 +5,9 @@ use App\Http\Controllers\CombustivelController;
 use App\Http\Controllers\CorController;
 use App\Http\Controllers\DepartamentoController;
 use App\Http\Controllers\MarcaController;
+use App\Http\Controllers\ModeloController;
 use App\Http\Controllers\MotoristaController;
+use App\Http\Controllers\RetiradaController;
 use App\Http\Controllers\TipoController;
 use App\Http\Controllers\TipoMedidaController;
 use App\Http\Controllers\VeiculoController;
@@ -26,7 +28,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/veiculos/cadastrar', [VeiculoController::class, 'cadastrar'])->name('veiculo.cadastrar');
+Route::get('/veiculos', [VeiculoController::class, 'index'])->name('veiculo');
+Route::post('/veiculos/cadastrar', [VeiculoController::class, 'cadastrar'])->name('veiculo.cadastrar');
 
 Route::get('/categoria-cnh', [CategoriaCnhController::class, 'index'])->name('categoria.cnh');
 Route::post('/categoria-cnh/cadastrar', [CategoriaCnhController::class, 'cadastrar'])->name('categoria.cnh.cadastrar');
@@ -51,3 +54,9 @@ Route::post('/departamentos/cadastrar', [DepartamentoController::class, 'cadastr
 
 Route::get('/motoristas', [MotoristaController::class, 'index'])->name('motorista');
 Route::post('/motoristas/cadastrar', [MotoristaController::class, 'cadastrar'])->name('motorista.cadastrar');
+
+Route::get('/modelos', [ModeloController::class, 'index'])->name('modelo');
+Route::post('/modelos/cadastrar', [ModeloController::class, 'cadastrar'])->name('modelo.cadastrar');
+
+Route::get('/retiradas', [RetiradaController::class, 'index'])->name('retirada');
+Route::post('/retiradas/cadastrar', [RetiradaController::class, 'cadastrar'])->name('retirada.cadastrar');
