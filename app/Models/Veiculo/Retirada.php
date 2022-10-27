@@ -10,10 +10,11 @@ class Retirada extends Model
     use HasFactory;
 
     protected $fillable = [
-    'veiculo',
-    'motorista',
-    'departamento_solicitante',
-    'ultima_medida',
+    'veiculo_id',
+    'motorista_id',
+    'departamento_id',
+    'data_retirada',
+    'hora_retirada',
     'medida_saida',
     'destino',
     'observacao'
