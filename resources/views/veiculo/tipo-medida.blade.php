@@ -3,8 +3,8 @@
 <form action={{ route('tipo.medida.cadastrar') }} method="POST">
     @csrf
     <input placeholder="Insira o tipo de medida" type="text" name="nome" id="nome">
-    <br/>
-    <br/>
+    <br />
+    <br />
 
     <button type="submit">Cadastrar</button>
 
