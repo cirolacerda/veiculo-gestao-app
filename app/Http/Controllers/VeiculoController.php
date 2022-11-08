@@ -16,8 +16,8 @@ use Illuminate\Http\Request;
 class VeiculoController extends Controller
 {
     //
-    public function index() {
-
+    public function index()
+    {
         $tipos = Tipo::all();
         $marcas = Marca::all();
         $modelos = Modelo::all();
@@ -27,7 +27,8 @@ class VeiculoController extends Controller
         $categoria_cnhs = CategoriaCnh::all();
         $departamentos = Departamento::all();
 
-        return view('veiculo.cadastrar',
+        return view(
+            'veiculo.cadastrar',
             [ 'tipos' => $tipos,
               'marcas' => $marcas,
               'modelos' => $modelos,
@@ -36,15 +37,14 @@ class VeiculoController extends Controller
               'combustiveis' => $combustiveis,
               'categoria_cnhs' => $categoria_cnhs,
               'departamentos' => $departamentos
-            ]);
+            ]
+        );
     }
 
-    public function cadastrar(Request $request){
-
+    public function cadastrar(Request $request)
+    {
         Veiculo::create($request->all());
 
         echo('Veiculo Salvo');
-
-
     }
 }

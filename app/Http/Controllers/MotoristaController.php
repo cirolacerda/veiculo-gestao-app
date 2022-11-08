@@ -10,8 +10,8 @@ use Illuminate\Http\Request;
 class MotoristaController extends Controller
 {
     //
-    public function index() {
-
+    public function index()
+    {
         $categorias_cnh = CategoriaCnh::all();
 
         $departamentos = Departamento::all();
@@ -19,7 +19,8 @@ class MotoristaController extends Controller
         return view('motorista', ['categorias_cnh' => $categorias_cnh, 'departamentos' => $departamentos]);
     }
 
-    public function cadastrar(Request $request) {
+    public function cadastrar(Request $request)
+    {
         /*
         $motorista = new Motorista();
         $motorista->nome = $request->input('nome');

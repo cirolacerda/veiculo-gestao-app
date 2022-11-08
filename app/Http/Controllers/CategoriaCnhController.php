@@ -9,18 +9,17 @@ class CategoriaCnhController extends Controller
 {
     //
 
-    public function index(){
-
+    public function index()
+    {
         return view('veiculo.categoria-cnh');
     }
 
-    public function cadastrar(Request $request) {
-
+    public function cadastrar(Request $request)
+    {
         $categoriaCnh = new CategoriaCnh();
         $categoriaCnh->nome = $request->input('nome');
         $categoriaCnh->save();
 
         echo('Categoria Salva!');
-
     }
 }

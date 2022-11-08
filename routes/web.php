@@ -66,7 +66,6 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
     Route::get('/retiradas', [RetiradaController::class, 'index'])->name('retirada');
     Route::post('/retiradas/cadastrar', [RetiradaController::class, 'cadastrar'])->name('retirada.cadastrar');
-
 });
 
 require __DIR__.'/auth.php';
