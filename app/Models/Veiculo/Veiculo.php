@@ -29,5 +29,4 @@ class Veiculo extends Model
         'capacidade_passageiros'
 
     ];
-
 }

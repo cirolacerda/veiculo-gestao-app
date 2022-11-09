@@ -9,19 +9,17 @@ use Illuminate\Http\Request;
 class ModeloController extends Controller
 {
     //
-    public function index() {
-
+    public function index()
+    {
         $marcas = Marca::all();
 
         return view('veiculo.modelo', ['marcas' => $marcas]);
     }
 
-    public function cadastrar(Request $request){
-
+    public function cadastrar(Request $request)
+    {
         Modelo::create($request->all());
 
         echo('Modelo Salvo');
-
-
     }
 }

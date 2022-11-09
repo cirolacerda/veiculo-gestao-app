@@ -13,8 +13,8 @@ class MarcaController extends Controller
         return view('veiculo.marca');
     }
 
-    public function cadastrar(Request $request){
-
+    public function cadastrar(Request $request)
+    {
         $marca = new Marca();
         $marca->nome = $request->input('nome');
         $marca->save();

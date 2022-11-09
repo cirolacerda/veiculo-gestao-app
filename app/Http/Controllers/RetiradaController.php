@@ -8,13 +8,13 @@ use Illuminate\Http\Request;
 class RetiradaController extends Controller
 {
     //
-    public function index() {
-
+    public function index()
+    {
         return view('veiculo.retirada');
     }
 
-    public function cadastrar(Request $request) {
-
+    public function cadastrar(Request $request)
+    {
         Retirada::create($request->all());
 
         echo('Retirada Cadastrada');

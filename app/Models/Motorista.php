@@ -18,5 +18,4 @@ class Motorista extends Model
         'primeira_habilitacao',
         'departamento_id'
     ];
-
 }

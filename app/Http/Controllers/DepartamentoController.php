@@ -8,13 +8,13 @@ use Illuminate\Http\Request;
 class DepartamentoController extends Controller
 {
     //
-    public function index() {
-
+    public function index()
+    {
         return view('departamento');
     }
 
-    public function cadastrar(Request $request) {
-
+    public function cadastrar(Request $request)
+    {
         $departamento = new Departamento();
         $departamento->nome = $request->input('nome');
         $departamento->sigla = $request->input('sigla');
