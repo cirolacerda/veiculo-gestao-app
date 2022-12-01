@@ -34,8 +34,11 @@ Route::middleware(['auth', 'verified'])->group(function () {
         return view('dashboard');
     })->name('dashboard');
 
-    Route::get('/veiculos', [VeiculoController::class, 'index'])->name('veiculo');
-    Route::post('/veiculos/cadastrar', [VeiculoController::class, 'cadastrar'])->name('veiculo.cadastrar');
+    //Route::get('/veiculos', [VeiculoController::class, 'index'])->name('veiculo');
+    //Route::post('/veiculos/cadastrar', [VeiculoController::class, 'cadastrar'])->name('veiculo.cadastrar');
+    //Route::get('/veiculos/gerenciar', [VeiculoController::class, 'gerenciar'])->name('veiculo.gerenciar');
+
+    Route::resource('veiculo', VeiculoController::class);
 
     Route::get('/categoria-cnh', [CategoriaCnhController::class, 'index'])->name('categoria.cnh');
     Route::post('/categoria-cnh/cadastrar', [CategoriaCnhController::class, 'cadastrar'])->name('categoria.cnh.cadastrar');
