@@ -61,8 +61,11 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/departamentos', [DepartamentoController::class, 'index'])->name('departamento');
     Route::post('/departamentos/cadastrar', [DepartamentoController::class, 'cadastrar'])->name('departamento.cadastrar');
 
-    Route::get('/motoristas', [MotoristaController::class, 'index'])->name('motorista');
-    Route::post('/motoristas/cadastrar', [MotoristaController::class, 'cadastrar'])->name('motorista.cadastrar');
+    //Route::get('/motoristas', [MotoristaController::class, 'index'])->name('motorista');
+    //Route::post('/motoristas/cadastrar', [MotoristaController::class, 'cadastrar'])->name('motorista.cadastrar');
+
+    Route::resource('motorista', MotoristaController::class);
+
 
     Route::get('/modelos', [ModeloController::class, 'index'])->name('modelo');
     Route::post('/modelos/cadastrar', [ModeloController::class, 'cadastrar'])->name('modelo.cadastrar');
