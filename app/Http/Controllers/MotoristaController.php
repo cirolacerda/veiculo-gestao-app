@@ -9,32 +9,87 @@ use Illuminate\Http\Request;
 
 class MotoristaController extends Controller
 {
-    //
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
+        //
         $categorias_cnh = CategoriaCnh::all();
 
         $departamentos = Departamento::all();
 
-        return view('motorista', ['categorias_cnh' => $categorias_cnh, 'departamentos' => $departamentos]);
+        return view('motorista.create', ['categorias_cnh' => $categorias_cnh, 'departamentos' => $departamentos]);
     }
 
-    public function cadastrar(Request $request)
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
     {
-        /*
-        $motorista = new Motorista();
-        $motorista->nome = $request->input('nome');
-        $motorista->matricula = $request->input('matricula');
-        $motorista->registro_habilitacao = $request->input('registro_habilitacao');
-        $motorista->categoria_cnh_id = $request->input('categoria_cnh');
-        $motorista->validade_cnh = $request->input('validade_cnh');
-        $motorista->primeira_habilitacao = $request->input('primeira_habilitacao');
-        $motorista->departamento_id = $request->input('departamento');
-        $motorista->save();
-        */
+        //
+    }
 
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        //
         Motorista::create($request->all());
 
-        echo('Motorista Salvo');
+        return redirect()->route('motorista.index');
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        //
     }
 }
