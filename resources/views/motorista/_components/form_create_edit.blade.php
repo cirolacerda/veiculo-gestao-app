@@ -1,8 +1,8 @@
 @if (isset($motorista->id))
-    <form action={{ route('motorista.update', ['motorista' => $motorista->id]) }} method="post">
+    <form action={{ route('motoristas.update', ['motorista' => $motorista->id]) }} method="post">
         @method('PUT')
     @else
-        <form action={{ route('motorista.store') }} method="post">
+        <form action={{ route('motoristas.store') }} method="post">
 @endif
 @csrf
 <x-text-input placeholder="Insira o nome" name="nome" id="nome" value="{{ $motorista->nome ?? old('nome') }}"
@@ -23,7 +23,7 @@
     <option value="">Selecione a categoria da CNH </option>
 
     @foreach ($categorias_cnh as $categoria_cnh)
-        <option value="{{ $categoria_cnh->id }}"> @selected(($motorista->categoria_cnh_id ?? old('categoria_cnh_id')) == $categoria_cnh->id) {{ $categoria_cnh->nome }} </option>
+        <option value="{{ $categoria_cnh->id }}" @selected(($motorista->categoria_cnh_id ?? old('categoria_cnh_id')) == $categoria_cnh->id)> {{ $categoria_cnh->nome }} </option>
     @endforeach
 
 </select>
