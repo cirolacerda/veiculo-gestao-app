@@ -38,7 +38,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     //Route::post('/veiculos/cadastrar', [VeiculoController::class, 'cadastrar'])->name('veiculo.cadastrar');
     //Route::get('/veiculos/gerenciar', [VeiculoController::class, 'gerenciar'])->name('veiculo.gerenciar');
 
-    Route::resource('veiculo', VeiculoController::class);
+    Route::resource('veiculos', VeiculoController::class);
 
     Route::get('/categoria-cnh', [CategoriaCnhController::class, 'index'])->name('categoria.cnh');
     Route::post('/categoria-cnh/cadastrar', [CategoriaCnhController::class, 'cadastrar'])->name('categoria.cnh.cadastrar');
@@ -64,8 +64,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     //Route::get('/motoristas', [MotoristaController::class, 'index'])->name('motorista');
     //Route::post('/motoristas/cadastrar', [MotoristaController::class, 'cadastrar'])->name('motorista.cadastrar');
 
-    Route::resource('motorista', MotoristaController::class);
-
+    Route::resource('motoristas', MotoristaController::class);
 
     Route::get('/modelos', [ModeloController::class, 'index'])->name('modelo');
     Route::post('/modelos/cadastrar', [ModeloController::class, 'cadastrar'])->name('modelo.cadastrar');
