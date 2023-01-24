@@ -17,11 +17,10 @@ class MotoristaController extends Controller
     public function index()
     {
         //
-        $categorias_cnh = CategoriaCnh::all();
+        $motoristas = Motorista::all();
 
-        $departamentos = Departamento::all();
+        return view('motorista.index', ['motoristas' => $motoristas]);
 
-        return view('motorista.create', ['categorias_cnh' => $categorias_cnh, 'departamentos' => $departamentos]);
     }
 
     /**
@@ -32,6 +31,11 @@ class MotoristaController extends Controller
     public function create()
     {
         //
+        $categorias_cnh = CategoriaCnh::all();
+
+        $departamentos = Departamento::all();
+
+        return view('motorista.create', ['categorias_cnh' => $categorias_cnh, 'departamentos' => $departamentos]);
     }
 
     /**
@@ -54,9 +58,10 @@ class MotoristaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Motorista $motorista)
     {
         //
+        return view('motorista.show', ['motorista' => $motorista]);
     }
 
     /**
@@ -65,9 +70,13 @@ class MotoristaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Motorista $motorista)
     {
         //
+        $categorias_cnh = CategoriaCnh::all();
+        $departamentos = Departamento::all();
+
+        return view('motorista.edit', ['motorista' => $motorista, 'categorias_cnh' => $categorias_cnh, 'departamentos' => $departamentos ]);
     }
 
     /**
@@ -77,9 +86,12 @@ class MotoristaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Motorista $motorista)
     {
         //
+        $motorista->update($request->all());
+
+        return view('motorista.show', ['motorista' => $motorista]);
     }
 
     /**
@@ -91,5 +103,8 @@ class MotoristaController extends Controller
     public function destroy($id)
     {
         //
+        Motorista::destroy($id);
+
+        return redirect()->route('motoristas.index');
     }
 }
