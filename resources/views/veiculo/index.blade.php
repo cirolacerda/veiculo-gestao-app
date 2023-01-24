@@ -12,7 +12,7 @@
         <div class="min-w-screen min-h-screen flex items-center justify-center bg-gray-100 font-sans overflow-hidden">
             <div class="w-full lg:w-5/6">
                 <div class="flex items-end justify-end">
-                    <a href="{{ route('veiculo.create') }}">
+                    <a href="{{ route('veiculos.create') }}">
                         <x-primary-button>
                             {{ __('Cadastrar') }}
                         </x-primary-button>
@@ -74,7 +74,7 @@
                                     <td class="py-3 px-6 text-center">
                                         <div class="flex item-center justify-center">
                                             <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
-                                                <a href="{{ route('veiculo.show', ['veiculo' => $veiculo->id]) }}">
+                                                <a href="{{ route('veiculos.show', ['veiculo' => $veiculo->id]) }}">
                                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none"
                                                         viewBox="0 0 24 24" stroke="currentColor">
                                                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -86,7 +86,7 @@
                                                 </a>
                                             </div>
                                             <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
-                                                <a href="{{ route('veiculo.edit', ['veiculo' => $veiculo->id]) }}">
+                                                <a href="{{ route('veiculos.edit', ['veiculo' => $veiculo->id]) }}">
                                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none"
                                                         viewBox="0 0 24 24" stroke="currentColor">
                                                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -97,7 +97,7 @@
                                             </div>
                                             <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
                                                 <form id="form_{{ $veiculo->id }}"
-                                                    action="{{ route('veiculo.destroy', ['veiculo' => $veiculo->id]) }}"
+                                                    action="{{ route('veiculos.destroy', ['veiculo' => $veiculo->id]) }}"
                                                     method="POST">
                                                     @csrf
                                                     @method('DELETE')

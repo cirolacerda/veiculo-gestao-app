@@ -1,8 +1,8 @@
 @if (isset($veiculo->id))
-    <form action={{ route('veiculo.update', ['veiculo' => $veiculo->id]) }} method="post">
+    <form action={{ route('veiculos.update', ['veiculo' => $veiculo->id]) }} method="post">
         @method('PUT')
     @else
-        <form action={{ route('veiculo.store') }} method="post">
+        <form action={{ route('veiculos.store') }} method="post">
 @endif
 @csrf
 <x-text-input placeholder="Insira a Placa" value="{{ $veiculo->placa ?? old('placa') }}" type="text" name="placa"

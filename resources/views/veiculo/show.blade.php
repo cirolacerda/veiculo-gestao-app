@@ -12,7 +12,7 @@
         <div class="min-w-screen min-h-screen flex items-center justify-center bg-gray-100 font-sans overflow-hidden">
             <div class="w-full lg:w-5/6">
                 <div class="flex items-end justify-end">
-                    <a href="{{ route('veiculo.create') }}">
+                    <a href="{{ route('veiculos.create') }}">
                         <x-primary-button>
                             {{ __('Cadastrar') }}
                         </x-primary-button>
