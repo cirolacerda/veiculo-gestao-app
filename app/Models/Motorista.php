@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Veiculo\CategoriaCnh;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -18,4 +19,14 @@ class Motorista extends Model
         'primeira_habilitacao',
         'departamento_id'
     ];
+
+    public function departamento()
+    {
+        return $this->belongsTo(Departamento::class);
+    }
+
+    public function categoriaCnh()
+    {
+        return $this->belongsTo(CategoriaCnh::class);
+    }
 }
