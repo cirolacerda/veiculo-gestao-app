@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Departamento;
 use App\Models\Motorista;
 use App\Models\Veiculo\CategoriaCnh;
-use Illuminate\Http\Request;
+use App\Http\Requests\MotoristaRequest;
 
 class MotoristaController extends Controller
 {
@@ -20,7 +20,6 @@ class MotoristaController extends Controller
         $motoristas = Motorista::all();
 
         return view('motorista.index', ['motoristas' => $motoristas]);
-
     }
 
     /**
@@ -44,12 +43,12 @@ class MotoristaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(MotoristaRequest $request)
     {
         //
         Motorista::create($request->all());
 
-        return redirect()->route('motorista.index');
+        return redirect()->route('motoristas.index');
     }
 
     /**
@@ -86,7 +85,7 @@ class MotoristaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Motorista $motorista)
+    public function update(MotoristaRequest $request, Motorista $motorista)
     {
         //
         $motorista->update($request->all());
