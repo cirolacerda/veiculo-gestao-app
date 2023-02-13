@@ -11,7 +11,7 @@ use App\Models\Veiculo\Modelo;
 use App\Models\Veiculo\Tipo;
 use App\Models\Veiculo\TipoMedida;
 use App\Models\Veiculo\Veiculo;
-use Illuminate\Http\Request;
+use App\Http\Requests\VeiculoRequest;
 
 class VeiculoController extends Controller
 {
@@ -52,48 +52,11 @@ class VeiculoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(VeiculoRequest $request)
     {
-        $regras = [
-            'placa' => 'required|min:7|max:7',
-            'tipo_id' => 'required|exists:tipos,id',
-            'marca_id' => 'required|exists:marcas,id',
-            'modelo_id' => 'required|exists:modelos,id',
-            'cor_id' => 'required|exists:cores,id',
-            'chassi' => 'required',
-            'renavam' => 'required',
-            'tipo_medida_id' => 'required|exists:tipos_medidas,id',
-            'medida_atual' => 'required',
-            'combustivel_id' => 'required|exists:combustiveis,id',
-            'capacidade_tanque' => 'required',
-            'capacidade_passageiros' => 'required|integer',
-            'categoria_cnh_id' => 'required|exists:categoria_cnhs,id',
-            'ano_fabricacao' => 'required',
-            'ano_modelo' => 'required',
-            'data_aquisicao' => 'required',
-            'departamento_id' => 'required|exists:departamentos,id',
-        ];
-
-        $feedbacks = [
-            'required' => 'O campo :attribute deve ser preenchido',
-            'placa.min' => 'O campo placa deve ter no mínimo 7 caracteres',
-            'placa.max' => 'O campo placa deve ter no máximo 7 caracteres',
-            'capacidade_passageiros.integer' => 'O campo peso deve ser um número inteiro',
-            'tipo_id.exists' => 'O tipo informado não existe',
-            'marca_id.exists' => 'A marca informada não existe',
-            'cor_id.exists' => 'A cor informada não existe',
-            'modelo_id.exists' => 'O modelo informado não existe',
-            'tipo_medida_id.exists' => 'O tipo de medida informado não existe',
-            'combustivel_id.exists' => 'O combustivel informado não existe',
-            'categoria_cnh_id.exists' => 'A categoria da cnh informada não existe',
-            'departamento_id.exists' => 'O departamento informado não existe',
-        ];
-
-        $request->validate($regras, $feedbacks);
-
         Veiculo::create($request->all());
 
-        return redirect()->route('veiculo.index');
+        return redirect()->route('veiculos.index');
     }
 
     /**
@@ -136,12 +99,12 @@ class VeiculoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Veiculo $veiculo)
+    public function update(VeiculoRequest $request, Veiculo $veiculo)
     {
         //
         $veiculo->update($request->all());
 
-        return view('veiculo.show', ['veiculo' => $veiculo] );
+        return view('veiculo.show', ['veiculo' => $veiculo]);
     }
 
     /**
@@ -155,6 +118,6 @@ class VeiculoController extends Controller
         //
         Veiculo::destroy($id);
 
-        return redirect()->route('veiculo.index');
+        return redirect()->route('veiculos.index');
     }
 }
