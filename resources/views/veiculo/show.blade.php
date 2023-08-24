@@ -242,8 +242,17 @@
                                     </div>
                                 </td>
                                 <td class="py-3 px-6 text-center">
-                                    <span
-                                        class="bg-purple-200 text-purple-600 py-1 px-3 rounded-full text-xs">Active</span>
+                                    @if ($veiculo->status == 'disponivel')
+                                        <span
+                                            class="bg-green-200 text-green-600 py-1 px-3 rounded-full text-xs">DISPONÍVEL</span>
+                                    @elseif ($veiculo->status == 'em_uso')
+                                        <span class="bg-yellow-200 text-yellow-600 py-1 px-3 rounded-full text-xs">EM
+                                            USO</span>
+                                    @elseif ($veiculo->status == 'em_manutencao')
+                                        <span class="bg-red-200 text-red-600 py-1 px-3 rounded-full text-xs">EM
+                                            MANUTENÇÃO</span>
+                                    @endif
+
                                 </td>
                             </tr>
                             <tr class="border-b border-gray-200 hover:bg-gray-100">
