@@ -10,7 +10,7 @@ class TipoController extends Controller
     //
     public function index()
     {
-        return view('veiculo.tipo-medida');
+        return view('veiculo.tipo');
     }
 
     public function cadastrar(Request $request)
